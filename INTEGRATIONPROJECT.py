@@ -44,18 +44,18 @@ def damage_phase():
     critical_input = input("Did you get a critical? (Yes/No) \n*Case sensitive* \nInput: ")
 
 
-    if critical_input == "Yes":
+    if critical_input == "Yes" or critical_input == "yes":
         critical_damage = int(damage_dealt * 2)
         total_damage = (critical_damage + damage_modifiers)
         print("Your total damage is: ", total_damage)
-    elif critical_input == "No":
+    elif critical_input == "No" or critical_input == "no":
         total_damage = (damage_dealt + damage_modifiers)
         print("Your total damage is: ", total_damage)
     else:
         print("Invalid Response. No Double Damage")
         total_damage = (damage_dealt + damage_modifiers)
         print("Your total damage is: ", total_damage)
- #The reason why I made it so it doesn't print "Invalid Response" was to pass through the program
+
     #Couldn't get this to work for now
     #if accuracy_roll == 20 :
     #    critical_damage = (damage1 *2)
@@ -66,12 +66,12 @@ def damage_phase():
     #    print("Your total damage is: ", total_damage)
 
     weakness_input = input("Do they resist your damage type or are you using their weakness against them? \n Input(resist/weakness/Enter(if neutral) \nInput: ")
-    if weakness_input == "resist":
+    if weakness_input == "resist" or weakness_input == "Resist":
     #These lines of code basically makes it so either it halves or doubles damage or does nothing.
         weakness_total_damage = math.ceil(total_damage / 2)
         print("Your total damage is", weakness_total_damage)
 
-    elif weakness_input == "weakness":
+    elif weakness_input == "weakness" or weakness_input == "Weakness":
         weakness_total_damage = math.ceil(total_damage * 2)
         print("Your total damage is", weakness_total_damage)
 
